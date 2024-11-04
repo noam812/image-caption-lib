@@ -1,0 +1,8 @@
+src/
+tests/
+examples/
+.env
+*.log
+Dockerfile
+jest.config.js
+tsconfig.json'
