@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/node";
 import winston from "winston";
-import { IMonitoring } from "../core/interfaces";
+import { IMonitoring } from "../core/interfaces.js";
 
 export class Monitoring implements IMonitoring {
   private logger: winston.Logger;

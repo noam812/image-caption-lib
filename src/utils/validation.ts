@@ -1,4 +1,4 @@
-import { CaptionConfig, Language } from "../core/types";
+import { CaptionConfig, Language } from "../core/types.js";
 
 export const validateConfig = (config: CaptionConfig): void => {
   if (!config.apiKey) {
@@ -10,7 +10,7 @@ export const validateConfig = (config: CaptionConfig): void => {
   }
 
   const supportedLanguages: Language[] = ["en", "es", "fr", "de", "ja", "zh"];
-  if (!supportedLanguages.includes(config.language)) {
+  if (!supportedLanguages.includes(config.language as Language)) {
     throw new Error(`Unsupported language: ${config.language}`);
   }
 
