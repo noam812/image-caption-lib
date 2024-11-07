@@ -16,11 +16,9 @@
     "version": "npm run format && git add -A src",
     "postversion": "git push && git push --tags"
   },
-  "author": "",
+  "author": "Noam Yahud",
   "license": "ISC",
   "dependencies": {
-    "@sentry/node": "^8.36.0",
-    "node-cache": "^5.1.2",
     "openai": "^4.70.2",
     "rate-limiter-flexible": "^5.0.4",
     "winston": "^3.16.0"
@@ -46,5 +44,9 @@
   "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ]
 }

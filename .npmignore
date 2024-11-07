@@ -1,8 +1,18 @@
-src/
+# Exclude GitHub workflows
+.github/
+
+# Exclude test files
 tests/
-examples/
+**/*.test.ts
+
+# Exclude configuration files
+.eslint*
+*.config.js
+jest.*
+tsconfig.json
+
+# Exclude environment files
+.env*
 .env
-*.log
-Dockerfile
-jest.config.js
-tsconfig.json'
+
+# Exclude other unnecessary files
