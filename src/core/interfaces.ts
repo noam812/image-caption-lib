@@ -14,7 +14,18 @@ export interface IRateLimiter {
   checkRateLimit(key: string): Promise<void>;
 }
 
+export interface ILogger {
+  error(message: string, metadata?: any): void;
+  warn(message: string, metadata?: any): void;
+  info(message: string, metadata?: any): void;
+  debug(message: string, metadata?: any): void;
+}
+
 export interface IMonitoring {
+  error(message: string, metadata?: any): void;
+  warn(message: string, metadata?: any): void;
+  info(message: string, metadata?: any): void;
+  debug(message: string, metadata?: any): void;
   logError(error: Error, context?: Record<string, any>): void;
   logApiUsage(apiKey: string, cost: number): void;
 }

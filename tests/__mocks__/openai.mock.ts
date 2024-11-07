@@ -1,9 +1,9 @@
-class MockOpenAI {
-    chat = {
-        completions: {
-            create: jest.fn()
-        }
-    }
-}
+const MockOpenAI = jest.fn().mockImplementation(() => ({
+  chat: {
+    completions: {
+      create: jest.fn(),
+    },
+  },
+}));
 
 export default MockOpenAI;

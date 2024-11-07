@@ -1,3 +1,5 @@
+import { ILogger } from "./interfaces";
+
 export type Language = "en" | "es" | "fr" | "de" | "ja" | "zh";
 
 export interface CaptionConfig {
@@ -5,21 +7,16 @@ export interface CaptionConfig {
   language: string;
   context: string;
   maxLength: number;
-  cacheDuration?: number; // Optional custom cache duration (in seconds)
-  disableCache?: boolean; // Optional flag to disable caching for a request
-  rateLimitPoints?: number; // Optional rate limit per minute
-  rateLimitDuration?: number; // Optional rate limit duration in seconds
-  monitor?: boolean; // Optional flag to enable monitoring
+  cacheDuration?: number;
+  disableCache?: boolean;
+  rateLimitPoints?: number;
+  rateLimitDuration?: number;
+  monitor?: boolean;
+  // New optional logging configuration
+  logging?: {
+    level?: "error" | "warn" | "info" | "debug";
+    customLogger?: ILogger; // Optional custom logger
+    outputFile?: string; // Optional path for log file
+  };
 }
 
-
-export type ApiResponse = {
-  choices: Array<{
-    message: {
-      content: string;
-    };
-  }>;
-  usage?: {
-    total_tokens: number;
-  };
-};
