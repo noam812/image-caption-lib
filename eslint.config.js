@@ -1,11 +1,13 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
+// eslint.config.js
+
+const globals = require("globals");
+const pluginJs = require("@eslint/js");
+const tseslint = require("@typescript-eslint/eslint-plugin");
 // Removed React plugin import since it's not needed for this project
-// import pluginReact from "eslint-plugin-react";
+// const pluginReact = require("eslint-plugin-react");
 
 /** @type {import('eslint').Linter.Config[]} */
-export default [
+module.exports = [
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
@@ -22,17 +24,15 @@ export default [
     },
   },
   pluginJs.configs.recommended,
-  ...tseslint.configs.recommended,
+  tseslint.configs.recommended,
   // Removed React plugin configuration
-  // pluginReact.configs.flat.recommended,
+  // pluginReact.configs.recommended,
   {
     rules: {
       // Disable the rule for disallowing 'any' types
       "@typescript-eslint/no-explicit-any": "off",
 
       // Adjust the rule for no unused variables
-      // "warn" will show a warning without failing the build
-      // "off" will disable the rule completely
       "@typescript-eslint/no-unused-vars": "warn",
 
       // You can add more rule customizations below as needed
