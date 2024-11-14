@@ -1,4 +1,4 @@
-import { IRateLimiter } from "../../core/interfaces.js";
+import type { IRateLimiter } from "../../core/interfaces.js";
 
 interface RateLimitEntry {
   points: number;

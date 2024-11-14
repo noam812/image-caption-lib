@@ -1,4 +1,4 @@
-import { ICacheService } from "../../core/interfaces.js";
+import type { ICacheService } from "../../core/interfaces.js";
 import { BrowserCacheService } from "./browserCache.js";
 import { CacheService } from "./cache.js";
 

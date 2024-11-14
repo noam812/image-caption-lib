@@ -1,4 +1,4 @@
-import { ICacheService } from "../../core/interfaces.js";
+import type { ICacheService } from "../../core/interfaces.js";
 
 export class BrowserCacheService implements ICacheService {
   private ttlSeconds: number;
@@ -25,11 +25,11 @@ export class BrowserCacheService implements ICacheService {
     }
 
     return value;
-    }
+  }
 
-    set(key: string, value: string, ttl?: number): void {
+  set(key: string, value: string, ttl?: number): void {
     const expiry = Date.now() + (ttl ?? this.ttlSeconds) * 1000;
     const cachedItem = JSON.stringify({ value, expiry });
     localStorage.setItem(key, cachedItem);
-    }
+  }
 }

@@ -1,4 +1,4 @@
-import { CaptionConfig, Language } from "../core/types.js";
+import type { CaptionConfig, Language } from '../core/types.js';
 
 export const validateConfig = (config: CaptionConfig): void => {
   if (!config.apiKey) {

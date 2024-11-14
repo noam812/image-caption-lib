@@ -1,5 +1,5 @@
-import { RateLimiterMemory } from "rate-limiter-flexible";
-import { IRateLimiter } from "../../core/interfaces.js";
+import { RateLimiterMemory } from 'rate-limiter-flexible';
+import type { IRateLimiter } from "../../core/interfaces.js";
 
 export class RateLimiter implements IRateLimiter {
   private limiter: RateLimiterMemory;
@@ -18,4 +18,4 @@ export class RateLimiter implements IRateLimiter {
       throw new Error("Rate limit exceeded");
     }
   }
-}
+};

@@ -1,5 +1,4 @@
-import { ILogger } from "./interfaces";
-
+import type { ILogger } from './interfaces.js';
 export type Language = "en" | "es" | "fr" | "de" | "ja" | "zh";
 
 export interface CaptionConfig {
