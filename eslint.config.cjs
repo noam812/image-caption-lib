@@ -1,43 +1,42 @@
-// eslint.config.js
+// eslint.config.cjs
 
 const globals = require("globals");
-const pluginJs = require("@eslint/js");
-const tseslint = require("@typescript-eslint/eslint-plugin");
-// Removed React plugin import since it's not needed for this project
-// const pluginReact = require("eslint-plugin-react");
+const tsEslintPlugin = require("@typescript-eslint/eslint-plugin");
+const eslintPluginReact = require("eslint-plugin-react");
 
 /** @type {import('eslint').Linter.Config[]} */
 module.exports = [
   {
-    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"], // Specify the file types to lint
     languageOptions: {
-      globals: { ...globals.node },
+      globals: { ...globals.node }, // Define global variables
+      parser: require("@typescript-eslint/parser"), // Specify the parser
       parserOptions: {
-        ecmaVersion: 2021,
-        sourceType: "module",
-        // Disable JSX since React is not used
+        ecmaVersion: 2021, // Specify ECMAScript version
+        sourceType: "module", // Specify module type
         ecmaFeatures: {
-          jsx: false,
+          jsx: true, // Enable JSX parsing
         },
       },
-      parser: "@typescript-eslint/parser",
     },
-  },
-  pluginJs.configs.recommended,
-  tseslint.configs.recommended,
-  // Removed React plugin configuration
-  // pluginReact.configs.recommended,
-  {
+    plugins: {
+      "@typescript-eslint": tsEslintPlugin, // Register TypeScript ESLint plugin
+      react: eslintPluginReact, // Register React ESLint plugin
+    },
     rules: {
-      // Disable the rule for disallowing 'any' types
-      "@typescript-eslint/no-explicit-any": "off",
+      // Core ESLint rules
+      "no-console": "warn",
+      "no-unused-vars": "warn",
 
-      // Adjust the rule for no unused variables
+      // TypeScript ESLint rules
+      "@typescript-eslint/no-explicit-any": "off",
       "@typescript-eslint/no-unused-vars": "warn",
 
-      // You can add more rule customizations below as needed
-      // Example:
-      // "semi": ["error", "always"],
+      // React-specific rules
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+
+      // Add more rules as needed
     },
   },
 ];
