@@ -1,6 +1,6 @@
-import { IRateLimiter } from "../../core/interfaces.js";
-import { BrowserRateLimiter } from "./browserRateLimit.js";
-import { RateLimiter } from "./rateLimit.js";
+import type { IRateLimiter } from "../../core/interfaces.js";
+import { BrowserRateLimiter } from './browserRateLimit.js';
+import { RateLimiter } from './rateLimit.js';
 
 export function createRateLimiter(): IRateLimiter {
   if (

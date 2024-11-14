@@ -1,4 +1,4 @@
-import { CaptionConfig } from "./types.js";
+import type { CaptionConfig } from "./types.js";
 
 export interface ILLMService {
   generateCaption(imageUrl: string, config: CaptionConfig): Promise<string>;
@@ -6,7 +6,7 @@ export interface ILLMService {
 
 export interface ICacheService {
   get(key: string): string | undefined;
-  set(key: string, value: string, ttl?: number ): void;
+  set(key: string, value: string, ttl?: number): void;
   getCacheKey(imageUrl: string, language: string): string;
 }
 

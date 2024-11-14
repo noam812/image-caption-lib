@@ -1,4 +1,4 @@
-import { CaptionConfig } from "./core/types.js";
+import type { CaptionConfig } from "./core/types.js";
 import { LLMService } from "./infrastructure/llmService.js";
 import { validateConfig } from "./utils/validation.js";
 

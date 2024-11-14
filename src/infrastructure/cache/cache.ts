@@ -1,5 +1,5 @@
-import NodeCache from "node-cache";
-import { ICacheService } from "../../core/interfaces.js";
+import NodeCache from 'node-cache';
+import type { ICacheService } from "../../core/interfaces.js";
 
 export class CacheService implements ICacheService {
   private cache: NodeCache;
@@ -19,4 +19,4 @@ export class CacheService implements ICacheService {
   set(key: string, value: string): void {
     this.cache.set(key, value);
   }
-}
+};

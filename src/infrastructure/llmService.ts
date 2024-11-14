@@ -1,8 +1,8 @@
-import { ILLMService } from "../core/interfaces.js";
-import { CaptionConfig } from "../core/types.js";
-import OpenAI from "openai";
-import { createCacheService } from "./cache/factory.js";
-import { createRateLimiter } from "./rateLimit/factory.js";
+import type { ILLMService } from "../core/interfaces.js";
+import type { CaptionConfig } from "../core/types.js";
+import OpenAI from 'openai';
+import { createCacheService } from './cache/factory.js';
+import { createRateLimiter } from './rateLimit/factory.js';
 
 export class LLMService implements ILLMService {
   public cacheService: ReturnType<typeof createCacheService>;
