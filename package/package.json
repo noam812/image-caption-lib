@@ -1,6 +1,6 @@
 {
   "name": "image-caption-auto-generator",
-  "version": "1.0.5",
+  "version": "1.0.4",
   "types": "dist/index.d.ts",
   "module": "dist/index.js",
   "description": "",
