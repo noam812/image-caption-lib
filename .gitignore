@@ -1,3 +1,13 @@
-/node_modules/
-.env.example
-dist
+node_modules/
+.env
+.env.local
+.env.*.local
+dist/
+*.log
+.DS_Store
+coverage/
+*.tgz
+.idea/
+.vscode/
+*.swp
+*.swo
