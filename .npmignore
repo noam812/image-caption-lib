@@ -1,18 +1,7 @@
-# Exclude GitHub workflows
-.github/
+# Ignore everything
+*
 
-# Exclude test files
-tests/
-**/*.test.ts
-
-# Exclude configuration files
-.eslint*
-*.config.js
-jest.*
-tsconfig.json
-
-# Exclude environment files
-.env*
-.env
-
-# Exclude other unnecessary files
+# Except:
+!dist/
+!README.md
+!package.json
