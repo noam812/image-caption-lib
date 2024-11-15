@@ -9,6 +9,6 @@ export function createCacheService(): ICacheService {
   ) {
     return new BrowserCacheService();
   } else {
-    return new CacheService();
+    return CacheService.getInstance();
   }
 }
