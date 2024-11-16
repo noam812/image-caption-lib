@@ -32,7 +32,7 @@ export class CacheService implements ICacheService {
   }
 
   set(key: string, value: string, ttl?: number): void {
-    this.cache.set(key, value, ttl);
+    this.cache.set(key, value, ttl ?? 0);
     console.log(`Cache set: key=${key}, value=${value}, ttl=${ttl}`);
   }
 }
