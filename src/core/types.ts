@@ -1,5 +1,5 @@
-import type { ILogger } from './interfaces.js';
-export type Language = "en" | "es" | "fr" | "de" | "ja" | "zh";
+import type { ILogger } from "./interfaces.js";
+export type Language = "en" | "es" | "fr" | "de" | "ja" | "zh" | "he" | "it" | "nl" | "pl" | "pt" | "ru" | "ar" | "cs" | "da" | "fi" | "el" | "hi" | "hu" | "id" | "ko" | "no" | "fa" | "ro" | "sv" | "th" | "tr" | "uk" | "vi";
 
 export interface CaptionConfig {
   apiKey: string;
@@ -18,4 +18,3 @@ export interface CaptionConfig {
     outputFile?: string; // Optional path for log file
   };
 }
-
